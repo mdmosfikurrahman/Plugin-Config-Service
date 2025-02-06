@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: Plugin-Config-Service
+
+  profiles:
+    active: dev
+
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  liquibase:
+    change-log: classpath:db/changelog/changelog.yaml
+    enabled: true
+
+  jpa:
+    show-sql: false
+    open-in-view: false
+
+  task:
+    scheduling:
+      pool:
+        size: 10
+
+server:
+  port: 8888
+  servlet:
+    context-path: /api/v1
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd hh:mm:ss a} | %highlight(%level) | [%file:%line] - %msg%n"
