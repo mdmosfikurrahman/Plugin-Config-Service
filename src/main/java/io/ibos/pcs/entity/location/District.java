@@ -25,7 +25,18 @@ public class District {
     @JoinColumn(name = "division_id", nullable = false)
     private Division division;
 
-    @OneToMany(mappedBy = "district", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "district", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Upazilla> upazillas;
+
+    @Override
+    public String toString() {
+        return "District{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nameBn='" + nameBn + '\'' +
+                ", coordinates='" + coordinates + '\'' +
+                ", divisionId=" + (division != null ? division.getId() : null) +
+                '}';
+    }
 }
 

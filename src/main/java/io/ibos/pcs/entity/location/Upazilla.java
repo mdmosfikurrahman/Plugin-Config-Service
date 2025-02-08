@@ -24,4 +24,14 @@ public class Upazilla {
     @JoinColumn(name = "division_id", nullable = false)
     private Division division;
 
+    @Override
+    public String toString() {
+        return "Upazilla{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nameBn='" + nameBn + '\'' +
+                ", districtId=" + (district != null ? district.getId() : null) +
+                ", divisionId=" + (division != null ? division.getId() : null) +
+                '}';
+    }
 }

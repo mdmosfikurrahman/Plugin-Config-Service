@@ -33,6 +33,7 @@ public class LocationRestServiceImpl implements LocationRestService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<DistrictResponse> getDistrictsByDivisionId(Long divisionId) {
         return districtRepository.findByDivision_Id(divisionId)
                 .stream()
@@ -41,6 +42,7 @@ public class LocationRestServiceImpl implements LocationRestService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<UpazillaResponse> getUpazillasByDistrictIdAndDivisionId(Long districtId, Long divisionId) {
         return upazillaRepository.findByDistrict_IdAndDistrict_Division_Id(districtId, divisionId)
                 .stream()

@@ -22,5 +22,15 @@ public class Division {
 
     @OneToMany(mappedBy = "division", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<District> districts;
+
+    @Override
+    public String toString() {
+        return "Division{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nameBn='" + nameBn + '\'' +
+                ", coordinates='" + coordinates + '\'' +
+                '}';
+    }
 }
 
