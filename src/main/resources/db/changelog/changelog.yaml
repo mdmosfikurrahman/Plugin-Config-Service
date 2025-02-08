@@ -5,7 +5,7 @@ databaseChangeLog:
       comment: "This changeset creates UI Config Table"
       changes:
         - sqlFile:
-            path: db/changelog/data/create_table_ui_config.sql
+            path: db/changelog/data/create/ui_config.sql
 
   - changeSet:
       id: create_table_plugin_config
@@ -13,4 +13,52 @@ databaseChangeLog:
       comment: "This changeset creates Plugin Config Table"
       changes:
         - sqlFile:
-            path: db/changelog/data/create_table_plugin_config.sql
+            path: db/changelog/data/create/plugin_config.sql
+
+  - changeSet:
+      id: create_table_division
+      author: mosfik
+      comment: "This changeset creates Division Table"
+      changes:
+        - sqlFile:
+            path: db/changelog/data/create/division.sql
+
+  - changeSet:
+      id: create_table_district
+      author: mosfik
+      comment: "This changeset creates District Table"
+      changes:
+        - sqlFile:
+            path: db/changelog/data/create/district.sql
+
+  - changeSet:
+      id: create_table_upazilla
+      author: mosfik
+      comment: "This changeset creates Upazilla Table"
+      changes:
+        - sqlFile:
+            path: db/changelog/data/create/upazilla.sql
+
+  - changeSet:
+      id: insert_in_table_division
+      author: mosfik
+      comment: "This changeset inserts in Division Table"
+      changes:
+        - sqlFile:
+            path: db/changelog/data/insert/division.sql
+
+  - changeSet:
+      id: insert_in_table_district
+      author: mosfik
+      comment: "This changeset inserts in District Table"
+      changes:
+        - sqlFile:
+            path: db/changelog/data/insert/district.sql
+
+  - changeSet:
+      id: insert_in_table_upazilla
+      author: mosfik
+      comment: "This changeset inserts in Upazilla Table"
+      changes:
+        - sqlFile:
+            path: db/changelog/data/insert/upazilla.sql

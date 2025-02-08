@@ -10,4 +10,5 @@ public interface LocationService {
 
     UiConfigResponse getThanas(String districtName);
 
+
 }

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.ibos.pcs.dto.request.UiConfigRequest;
 import io.ibos.pcs.dto.response.UiConfigResponse;
-import io.ibos.pcs.entity.UiConfig;
+import io.ibos.pcs.entity.config.UiConfig;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

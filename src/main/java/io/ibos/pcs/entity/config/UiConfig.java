@@ -1,4 +1,4 @@
-package io.ibos.pcs.entity;
+package io.ibos.pcs.entity.config;
 
 import jakarta.persistence.*;
 import lombok.Data;

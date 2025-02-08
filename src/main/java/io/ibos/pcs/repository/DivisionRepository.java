@@ -1,9 +1,10 @@
 package io.ibos.pcs.repository;
 
-import io.ibos.pcs.entity.config.UiConfig;
+import io.ibos.pcs.entity.location.Division;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UiConfigRepository extends JpaRepository<UiConfig, Long> {
+public interface DivisionRepository extends JpaRepository<Division, Long> {
+
 }
