@@ -1,9 +1,6 @@
 package io.ibos.pcs.service.impl;
 
-import io.ibos.pcs.dto.response.DistrictResponse;
-import io.ibos.pcs.dto.response.DivisionResponse;
-import io.ibos.pcs.dto.response.UiConfigResponse;
-import io.ibos.pcs.dto.response.UpazilaResponse;
+import io.ibos.pcs.dto.response.*;
 import io.ibos.pcs.service.LocationRestService;
 import io.ibos.pcs.service.LocationViewService;
 import lombok.RequiredArgsConstructor;
@@ -109,6 +106,11 @@ public class LocationViewServiceImpl implements LocationViewService {
         configSettings.put("upazilaDropdown", htmlCode);
 
         return new UiConfigResponse("upazilaDropdown", configSettings);
+    }
+
+    @Override
+    public LocationDetailsResponse getLocationDetails(Long upazilaId, Long districtId, Long divisionId) {
+        return locationRestService.getLocationDetails(upazilaId, districtId, divisionId);
     }
 
     private <T> String buildDropdownHtml(

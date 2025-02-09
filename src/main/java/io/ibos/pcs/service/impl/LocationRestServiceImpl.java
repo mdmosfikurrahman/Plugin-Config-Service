@@ -1,8 +1,11 @@
 package io.ibos.pcs.service.impl;
 
+import io.ibos.pcs.common.exception.NotFoundException;
 import io.ibos.pcs.dto.response.DistrictResponse;
 import io.ibos.pcs.dto.response.DivisionResponse;
+import io.ibos.pcs.dto.response.LocationDetailsResponse;
 import io.ibos.pcs.dto.response.UpazilaResponse;
+import io.ibos.pcs.entity.location.Upazila;
 import io.ibos.pcs.repository.DistrictRepository;
 import io.ibos.pcs.repository.DivisionRepository;
 import io.ibos.pcs.repository.UpazilaRepository;
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -65,4 +69,29 @@ public class LocationRestServiceImpl implements LocationRestService {
                 .map(locationMapper::toUpazilaResponse)
                 .toList();
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public LocationDetailsResponse getLocationDetails(Long upazilaId, Long districtId, Long divisionId) {
+        Upazila upazila = upazilaRepository.findById(upazilaId)
+                .orElseThrow(() -> new NotFoundException("Upazila not found"));
+
+        if (!Objects.equals(upazila.getDistrict().getId(), districtId) || !Objects.equals(upazila.getDivision().getId(), divisionId)) {
+            throw new NotFoundException("District or Division ID mismatch");
+        }
+
+        DivisionResponse divisionResponse = locationMapper.toDivisionResponse(upazila.getDivision());
+        DistrictResponse districtResponse = locationMapper.toDistrictResponse(upazila.getDistrict());
+        UpazilaResponse upazilaResponse = locationMapper.toUpazilaResponse(upazila);
+
+        return new LocationDetailsResponse(
+                divisionResponse.getDivisionName(),
+                divisionResponse.getDivisionNameBn(),
+                districtResponse.getDistrictName(),
+                districtResponse.getDistrictNameBn(),
+                upazilaResponse.getUpazilaName(),
+                upazilaResponse.getUpazilaNameBn()
+        );
+    }
+
 }

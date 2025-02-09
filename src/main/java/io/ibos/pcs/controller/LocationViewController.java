@@ -1,6 +1,7 @@
 package io.ibos.pcs.controller;
 
 import io.ibos.pcs.common.response.RestResponse;
+import io.ibos.pcs.dto.response.LocationDetailsResponse;
 import io.ibos.pcs.dto.response.UiConfigResponse;
 import io.ibos.pcs.service.LocationViewService;
 import lombok.RequiredArgsConstructor;
@@ -45,5 +46,11 @@ public class LocationViewController {
     public RestResponse<UiConfigResponse> getUpazilasByDistrictAndDivision(@PathVariable Long districtId, @PathVariable Long divisionId) {
         UiConfigResponse response = locationViewService.getUpazilasByDistrictAndDivision(districtId, divisionId);
         return RestResponse.success(HttpStatus.OK.value(), "Successfully retrieved upazilas", response);
+    }
+
+    @GetMapping("/details/{upazilaId}/{districtId}/{divisionId}")
+    public RestResponse<LocationDetailsResponse> getLocationDetails(@PathVariable Long upazilaId, @PathVariable Long districtId, @PathVariable Long divisionId){
+        LocationDetailsResponse response = locationViewService.getLocationDetails(upazilaId, districtId, divisionId);
+        return RestResponse.success(HttpStatus.OK.value(), "Successfully retrieved All Location Details", response);
     }
 }
