@@ -32,12 +32,12 @@ databaseChangeLog:
             path: db/changelog/data/create/district.sql
 
   - changeSet:
-      id: create_table_upazilla
+      id: create_table_upazila
       author: mosfik
-      comment: "This changeset creates Upazilla Table"
+      comment: "This changeset creates Upazila Table"
       changes:
         - sqlFile:
-            path: db/changelog/data/create/upazilla.sql
+            path: db/changelog/data/create/upazila.sql
 
   - changeSet:
       id: insert_in_table_division
@@ -56,9 +56,9 @@ databaseChangeLog:
             path: db/changelog/data/insert/district.sql
 
   - changeSet:
-      id: insert_in_table_upazilla
+      id: insert_in_table_upazila
       author: mosfik
-      comment: "This changeset inserts in Upazilla Table"
+      comment: "This changeset inserts in Upazila Table"
       changes:
         - sqlFile:
-            path: db/changelog/data/insert/upazilla.sql
+            path: db/changelog/data/insert/upazila.sql

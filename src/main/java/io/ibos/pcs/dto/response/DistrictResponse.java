@@ -17,6 +17,6 @@ public class DistrictResponse {
     private String districtName;
     private String districtNameBn;
     private String districtCoordinates;
-    private List<UpazillaResponse> upazillas;
+    private List<UpazilaResponse> upazilas;
 
 }

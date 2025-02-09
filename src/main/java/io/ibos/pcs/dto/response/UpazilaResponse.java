@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpazillaResponse {
+public class UpazilaResponse {
 
-    private Long upazillaId;
-    private String upazillaName;
-    private String upazillaNameBn;
+    private Long upazilaId;
+    private String upazilaName;
+    private String upazilaNameBn;
 
 }

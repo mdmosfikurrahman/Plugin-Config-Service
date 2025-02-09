@@ -26,7 +26,7 @@ public class District {
     private Division division;
 
     @OneToMany(mappedBy = "district", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<Upazilla> upazillas;
+    private List<Upazila> upazilas;
 
     @Override
     public String toString() {

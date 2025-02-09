@@ -2,10 +2,10 @@ package io.ibos.pcs.util;
 
 import io.ibos.pcs.dto.response.DistrictResponse;
 import io.ibos.pcs.dto.response.DivisionResponse;
-import io.ibos.pcs.dto.response.UpazillaResponse;
+import io.ibos.pcs.dto.response.UpazilaResponse;
 import io.ibos.pcs.entity.location.District;
 import io.ibos.pcs.entity.location.Division;
-import io.ibos.pcs.entity.location.Upazilla;
+import io.ibos.pcs.entity.location.Upazila;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,17 +29,17 @@ public class LocationMapper {
                 .districtName(district.getName())
                 .districtNameBn(district.getNameBn())
                 .districtCoordinates(district.getCoordinates())
-                .upazillas(district.getUpazillas() != null
-                        ? district.getUpazillas().stream().map(this::toUpazillaResponse).toList()
+                .upazilas(district.getUpazilas() != null
+                        ? district.getUpazilas().stream().map(this::toUpazilaResponse).toList()
                         : null)
                 .build();
     }
 
-    public UpazillaResponse toUpazillaResponse(Upazilla upazilla) {
-        return UpazillaResponse.builder()
-                .upazillaId(upazilla.getId())
-                .upazillaName(upazilla.getName())
-                .upazillaNameBn(upazilla.getNameBn())
+    public UpazilaResponse toUpazilaResponse(Upazila upazila) {
+        return UpazilaResponse.builder()
+                .upazilaId(upazila.getId())
+                .upazilaName(upazila.getName())
+                .upazilaNameBn(upazila.getNameBn())
                 .build();
     }
 }

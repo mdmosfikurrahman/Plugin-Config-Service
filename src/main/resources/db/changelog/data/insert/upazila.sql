@@ -1,4 +1,4 @@
-INSERT INTO upazilla (id, name, name_bn, district_id, division_id)
+INSERT INTO upazila (id, name, name_bn, district_id, division_id)
 VALUES (1, "Amtali", "আমতলী", 1, 1),
        (2, "Bamna", "বামনা", 1, 1),
        (3, "Barguna Sadar", "বরগুনা সদর", 1, 1),

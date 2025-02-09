@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Upazilla {
+public class Upazila {
 
     @Id
     private Long id;
@@ -26,7 +26,7 @@ public class Upazilla {
 
     @Override
     public String toString() {
-        return "Upazilla{" +
+        return "Upazila{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", nameBn='" + nameBn + '\'' +
